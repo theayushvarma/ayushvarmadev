@@ -1,7 +1,5 @@
 # Hi there, I'm Ayush Varma 👋
 
-![Profile Banner](https://ayushvarmadev.vercel.app/images/avatar.jpg)
-
 **Shopify Theme & App Developer | MERN Full-Stack Engineer | AI in eCommerce**  
 2+ years building scalable eCommerce solutions, headless stores, custom Shopify apps, and AI-driven automation.  
 
@@ -87,3 +85,4 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Varma-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ayushvarmadev/)  
 [![Portfolio](https://img.shields.io/badge/Portfolio-Website-blue?style=for-the-badge&logo=google-chrome)](https://ayushvarmadev.vercel.app)  
 [![Email](https://img.shields.io/badge/Email-vayush798@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:vayush798@gmail.com)
+
