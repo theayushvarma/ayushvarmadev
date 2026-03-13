@@ -63,7 +63,7 @@
 ## 🎓 Education
 
 - **Master of Computer Applications (MCA – AI/ML)**, Parul University, Vadodara (Jun 2024 – May 2026)  
-- **Bachelor of Computer Applications – Web Development**, VNSGU, Surat (Jun 2021 – Apr 2024) — Grade: A, Top 10 in Class  
+- **Bachelor of Computer Applications – Web Development**, VNSGU, Surat (Jun 2021 – Apr 2024) - Grade: A, Top 10 in Class  
 
 ---
 

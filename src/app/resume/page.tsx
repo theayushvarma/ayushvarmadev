@@ -5,7 +5,7 @@ export default function Resume() {
   return (
     <Column maxWidth="l" padding="l" className="mx-auto" gap="l">
       <Heading variant="display-strong-xl" align="center">
-        Ayush Varma — Resume
+        Ayush Varma - Resume
       </Heading>
 
       {/* Download Button */}

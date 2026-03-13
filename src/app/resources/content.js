@@ -1,16 +1,12 @@
 import { InlineCode } from "@/once-ui/components";
 
-// Portfolio configuration for Ayush Varma
-// Tone: Balanced mix (Professional + creative)
-// SEO-ready: titles, descriptions, and structured fields included
-
 const person = {
   firstName: "Ayush",
   lastName: "Varma",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Shopify Theme & App Developer | MERN Full-Stack Engineer | AI in eCommerce (PhD Aspirant)",
+  role: "Software Engineer · React · Next.js · Shopify · AI Automation",
   avatar: "/images/avatar.jpg",
   location: "Asia/Kolkata", // Surat, Gujarat, India
   languages: ["English", "Hindi", "Gujarati"],
@@ -21,8 +17,8 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally share case studies, Shopify tips, MERN tutorials, and research notes on
-      AI for eCommerce.
+      I share what I learn building AI-powered Shopify apps, automation tools,
+      and full-stack commerce systems - from inside the diamond and jewelry industry.
     </>
   ),
 };
@@ -31,17 +27,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/ayushvarmadev",
+    link: "https://github.com/theayushvarma",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/ayushvarmadev/",
+    link: "https://www.linkedin.com/in/theayushvarma/",
   },
   {
     name: "Portfolio",
     icon: "website",
-    link: "https://ayushvarmadev.vercel.app",
+    link: "https://theayushvarma.vercel.app",
   },
   {
     name: "Email",
@@ -53,28 +49,42 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio showcasing ${person.name}'s work as a Shopify & Full-Stack developer (MERN) and AI-in-eCommerce researcher.`,
-  headline: <>Shopify Theme & App Developer</>,
+  description: `Portfolio showcasing ${person.name}'s work as a full-stack engineer specialising in Shopify, React, Next.js, and AI automation for eCommerce.`,
+  headline: <>Full-Stack Engineer · Shopify · AI Automation</>,
   subline: (
     <>
-      I'm {person.name}, a Shopify & Full-Stack Developer building high-converting stores,
-      custom apps, and AI-driven eCommerce tooling. I combine deep Shopify knowledge (Liquid,
-      Polaris, Storefront/Admin GraphQL) with React/Next.js and scalable Node.js backends to
-      solve complex problems simply.
+      I'm {person.firstName}, a software engineer who builds production commerce systems
+      at international scale. I've shipped 4 Shopify storefronts across Australia, Germany,
+      UK, and USA - plus a full B2B marketplace and AI pipelines that eliminated 60%+ of
+      manual operations work. I sit at a rare intersection: deep Shopify expertise, modern
+      React/Next.js skills, and domain knowledge inside the diamond and jewelry industry
+      almost no other developer has.
     </>
   ),
   seo: {
-    title: "Ayush Varma — Shopify Theme & App Developer | MERN & AI",
+    title: "Ayush Varma - Software Engineer · Shopify · React · Next.js · AI Automation",
     description:
-      "Ayush Varma — Shopify developer specializing in themes, apps, headless stores, and AI-driven eCommerce solutions. Portfolio, projects and contact.",
-    keywords: ["Ayush Varma", "Shopify developer", "Shopify app developer", "MERN", "AI eCommerce"],
+      "Ayush Varma - Full-stack engineer specialising in Shopify development, React/Next.js, headless commerce, and AI automation. Shipped 4 international storefronts. Open to remote roles.",
+    keywords: [
+      "Ayush Varma",
+      "Shopify developer",
+      "Shopify app developer",
+      "React developer",
+      "Next.js engineer",
+      "full-stack developer",
+      "AI automation",
+      "headless commerce",
+      "eCommerce engineer",
+      "jewelry tech",
+      "diamond industry software",
+    ],
   },
 };
 
 const about = {
   label: "About",
   title: "About Me",
-  description: `Meet ${person.name}, ${person.role} from Surat, Gujarat, India`,
+  description: `Meet ${person.name}, ${person.role} based in Surat, Gujarat, India`,
   tableOfContent: { display: true, subItems: false },
   avatar: { display: true },
   calendar: { display: true, link: "tel:+918732953410" },
@@ -83,10 +93,17 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I'm {person.name}, a Shopify-focused Full-Stack Developer with 2+ years of practical experience building
-        scalable eCommerce solutions. My work spans advanced Shopify theme customization, private & public Shopify
-        apps, headless storefronts with React/Next.js, and automation tooling using the MERN stack. After completing
-        my MCA, I plan to pursue a PhD in Artificial Intelligence applied to eCommerce automation and personalization.
+        I'm {person.name}, a full-stack engineer with 2.5 years of production experience
+        building international commerce systems. I design and ship end-to-end - from database
+        schema to deployed UI - with a focus on performance, automation, and real business
+        impact.
+        <br /><br />
+        I work inside the diamond and jewelry industry in Surat - the diamond capital of the
+        world. This gives me a perspective on commerce problems that most developers simply
+        don't have. I don't just build features. I solve the actual business problem.
+        <br /><br />
+        Currently deepening: TypeScript, system design, distributed systems, and building
+        AI-powered Shopify apps as a side project for the jewelry industry.
       </>
     ),
   },
@@ -96,40 +113,72 @@ const about = {
     experiences: [
       {
         company: "The Diamond Port",
-        timeframe: "Apr 2025 - Present",
-        role: "Full Stack Developer",
+        timeframe: "Apr 2025 – Present",
+        role: "Software Engineer - Full Stack",
         achievements: [
           <>
-            MERN & Shopify developer working on high-performance websites, SaaS products and custom Shopify solutions.
+            Architected and shipped <strong>4 international Shopify storefronts</strong> from
+            scratch (Australia, Germany, UK, USA) - custom Liquid themes, localised checkout,
+            multi-currency payments, and 3rd-party API integrations.
           </>,
           <>
-            Built tools and integrations using React, Next.js, Vue.js, Node.js, Express, MongoDB, MySQL, Firebase and Shopify Liquid.
+            Built the company's complete <strong>B2B marketplace in Next.js</strong> - wholesale
+            ordering, 2,000+ SKU catalog, merchant portal, and multi-currency pricing across 3
+            countries.
           </>,
           <>
-            Focus areas: headless commerce, app automation, performance optimization, and GraphQL integrations.
+            Implemented <strong>AI automation pipelines</strong> using Node.js + LLM APIs that
+            eliminated ~15 hours/week of manual operations work across inventory, ordering, and
+            reporting workflows.
+          </>,
+          <>
+            Integrated Shopify APIs, custom metafields, GraphQL, and 10+ third-party services
+            to deliver seamless headless commerce experiences.
+          </>,
+          <>
+            <strong>Sole engineer</strong> - owned full product lifecycle from requirements →
+            architecture → deployment → monitoring across all 4 storefronts.
           </>,
         ],
       },
       {
         company: "The Diamond Port",
-        timeframe: "Apr 2024 - Mar 2025",
+        timeframe: "Apr 2024 – Mar 2025",
         role: "Frontend Web Developer",
         achievements: [
           <>
-            Led front-end work for The Diamond Port website and multiple client stores using React, Vue, Sass and animation libraries.
+            Developed responsive, high-performance UIs using React.js, Vue.js, and Vanilla
+            JavaScript across multiple client-facing web applications.
           </>,
           <>
-            Implemented accessible, responsive UIs and collaborated closely with design & backend teams to deliver polished products.
+            Built reusable UI component libraries - reduced feature development time by
+            ~30% across projects.
+          </>,
+          <>
+            Optimised Core Web Vitals and Lighthouse performance scores across all deployed
+            Shopify and web properties.
+          </>,
+          <>
+            Implemented animated, accessible interfaces using GSAP and AOS for premium jewelry
+            brand experiences.
           </>,
         ],
       },
       {
         company: "The Diamond Port",
-        timeframe: "Oct 2023 - Mar 2024",
-        role: "React.js Intern",
+        timeframe: "Oct 2023 – Mar 2024",
+        role: "React.js Developer Intern",
         achievements: [
           <>
-            Contributed to dynamic and responsive web applications, improving user interactions and frontend architecture.
+            Built dynamic web interfaces using React.js in a live production codebase.
+          </>,
+          <>
+            Developed reusable components and implemented responsive UI designs across multiple
+            product pages.
+          </>,
+          <>
+            Applied REST API integration, state management, and Git version control in a
+            professional team setting.
           </>,
         ],
       },
@@ -141,39 +190,53 @@ const about = {
     institutions: [
       {
         name: "Parul University, Vadodara",
-        description: <>Master of Computer Applications (MCA) — Computer & Information Sciences (Jun 2024 - May 2026)</>,
+        description: (
+          <>
+            Master of Computer Applications (MCA) - AI/ML (Jun 2024 – May 2026). Pursuing
+            full-time while working as a software engineer. Focus: advanced algorithms,
+            distributed systems, AI/ML applications.
+          </>
+        ),
       },
       {
         name: "Veer Narmad South Gujarat University (VNSGU), Surat",
-        description: <>Bachelor's degree, Computer Software Engineering (Jun 2021 - Apr 2024) — Grade: A</>,
+        description: (
+          <>
+            Bachelor of Computer Applications - Web Development (Jun 2021 – Apr 2024).
+            Grade: A · Top 10 in Class.
+          </>
+        ),
       },
     ],
-    phdPlan: {
-      display: true,
-      note:
-        "Planning to pursue a PhD in Artificial Intelligence applied to eCommerce Automation and Personalization after MCA.",
-    },
   },
   technical: {
     display: true,
     title: "Technical Skills",
     skills: [
       {
-        title: "Shopify Theme & App Development",
+        title: "Shopify Development",
         description:
-          "Advanced customization (Liquid), Polaris components, Storefront/Admin GraphQL, private & public app architecture.",
+          "Shopify Liquid, Storefront API, Admin API, Polaris, Checkout Extensions, private & public app development, headless commerce architecture.",
       },
       {
-        title: "MERN Stack & Headless Commerce",
-        description: "React, Next.js, Node.js, Express, MongoDB — building headless stores and APIs.",
+        title: "Frontend - React & Next.js",
+        description:
+          "React.js, Next.js, TypeScript, JavaScript (ES6+), Vue.js, HTML5, CSS3, Tailwind CSS, GSAP, AOS - production-grade, accessible, animated UIs.",
       },
       {
-        title: "AI / Automation",
-        description: "Python automation, exploring ML/AI for recommendations, personalization, and chatbots in eCommerce.",
+        title: "Backend & APIs",
+        description:
+          "Node.js, Express.js, GraphQL, REST APIs, MongoDB, MySQL, Firebase - scalable APIs and full-stack architectures.",
       },
       {
-        title: "Frontend & Animations",
-        description: "GSAP, AOS, Tailwind CSS, Bootstrap — accessible, animated, responsive UIs.",
+        title: "AI & Automation",
+        description:
+          "LLM integration (OpenAI API, Claude API), n8n, Make, Zapier, workflow automation, AI-powered product tools for eCommerce.",
+      },
+      {
+        title: "Currently Learning",
+        description:
+          "TypeScript (deepening), system design, distributed systems, Docker, Jest/Cypress, CI/CD pipelines.",
       },
     ],
   },
@@ -181,30 +244,75 @@ const about = {
 
 const blog = {
   label: "Blog",
-  title: "Writing about Shopify, MERN, and AI-in-eCommerce",
-  description: `Read technical posts and research notes by ${person.name}`,
+  title: "Writing about Shopify, AI Automation, and Building in Public",
+  description: `Technical posts, build logs, and lessons from ${person.name} - engineering inside the diamond and jewelry industry.`,
 };
 
 const work = {
   label: "Work",
   title: "Projects & Case Studies",
-  description: `Selected Shopify and web development projects by ${person.name}.`,
+  description: `Production Shopify stores, full-stack apps, and AI automation projects by ${person.name}.`,
 };
 
 const gallery = {
   label: "Projects",
   title: "Project Gallery",
-  description: `A curated gallery of professional work by ${person.name}.`,
+  description: `A curated gallery of production work by ${person.name}.`,
   images: [
-    { src: "/images/gallery/1.png", alt: "The Diamond Port", orientation: "horizontal", href: "https://thediamondport.com" },
-    { src: "/images/gallery/2.png", alt: "Rings of Australia", orientation: "horizontal", href: "https://ringsofaustralia.com.au" },
-    { src: "/images/gallery/5.png", alt: "Precious Carbon", orientation: "horizontal", href: "https://www.preciouscarbon.com" },
-    { src: "/images/gallery/6.png", alt: "Premexa", orientation: "horizontal", href: "https://premexa.in" },
-    { src: "/images/gallery/7.png", alt: "Moimoi - Colour Lab Grown Diamonds", orientation: "horizontal", href: "https://www.moimoi.com.au/colour-lab-grown-diamonds" },
-    { src: "/images/gallery/8.png", alt: "World Wide Stock Lot", orientation: "horizontal", href: "https://worldwidestocklot.com" },
-    { src: "/images/gallery/9.png", alt: "Vaidehi Rayon", orientation: "horizontal", href: "https://vaidehirayon.com" },
-    { src: "/images/gallery/10.png", alt: "TDP Ring Builder (Shopify)", orientation: "horizontal", href: "https://apps.shopify.com/tdp-ring-builder" },
-    { src: "/images/gallery/14.png", alt: "Velar Diamonds", orientation: "horizontal", href: "https://velardiamonds.com" },
+    {
+      src: "/images/gallery/1.png",
+      alt: "The Diamond Port - B2B Jewelry Marketplace",
+      orientation: "horizontal",
+      href: "https://thediamondport.com",
+    },
+    {
+      src: "/images/gallery/2.png",
+      alt: "Rings of Australia - International Shopify Storefront",
+      orientation: "horizontal",
+      href: "https://ringsofaustralia.com.au",
+    },
+    {
+      src: "/images/gallery/10.png",
+      alt: "TDP Ring Builder - Shopify App Store",
+      orientation: "horizontal",
+      href: "https://apps.shopify.com/tdp-ring-builder",
+    },
+    {
+      src: "/images/gallery/5.png",
+      alt: "Precious Carbon - Luxury Diamond eCommerce",
+      orientation: "horizontal",
+      href: "https://www.preciouscarbon.com",
+    },
+    {
+      src: "/images/gallery/14.png",
+      alt: "Velar Diamonds - Shopify Headless Store",
+      orientation: "horizontal",
+      href: "https://velardiamonds.com",
+    },
+    {
+      src: "/images/gallery/7.png",
+      alt: "Moimoi - Colour Lab Grown Diamonds",
+      orientation: "horizontal",
+      href: "https://www.moimoi.com.au/colour-lab-grown-diamonds",
+    },
+    {
+      src: "/images/gallery/6.png",
+      alt: "Premexa - Next.js eCommerce",
+      orientation: "horizontal",
+      href: "https://premexa.in",
+    },
+    {
+      src: "/images/gallery/8.png",
+      alt: "World Wide Stock Lot",
+      orientation: "horizontal",
+      href: "https://worldwidestocklot.com",
+    },
+    {
+      src: "/images/gallery/9.png",
+      alt: "Vaidehi Rayon",
+      orientation: "horizontal",
+      href: "https://vaidehirayon.com",
+    },
   ],
 };
 
