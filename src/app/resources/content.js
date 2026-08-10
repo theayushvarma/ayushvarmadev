@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Engineer · React · Next.js · Shopify · AI Automation",
+  role: "Software Engineer · React · Next.js · Shopify · Three.js/3D · AI Automation",
   avatar: "/images/avatar.jpg",
   location: "Asia/Kolkata", // Surat, Gujarat, India
   languages: ["English", "Hindi", "Gujarati"],
@@ -17,8 +17,9 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I share what I learn building AI-powered Shopify apps, automation tools,
-      and full-stack commerce systems - from inside the diamond and jewelry industry.
+      I share what I learn building AI-powered Shopify apps, 3D/AR-VR commerce
+      experiences, automation tools, and full-stack systems - from inside the
+      diamond and jewelry industry.
     </>
   ),
 };
@@ -49,22 +50,23 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio showcasing ${person.name}'s work as a full-stack engineer specialising in Shopify, React, Next.js, and AI automation for eCommerce.`,
-  headline: <>Full-Stack Engineer · Shopify · AI Automation</>,
+  description: `Portfolio showcasing ${person.name}'s work as a full-stack engineer specialising in Shopify, React, Next.js, 3D/AR-VR web experiences, and AI automation for eCommerce.`,
+  headline: <>Full-Stack Engineer · Shopify · 3D/AR-VR · AI Automation</>,
   subline: (
     <>
       I'm {person.firstName}, a software engineer who builds production commerce systems
       at international scale. I've shipped 4 Shopify storefronts across Australia, Germany,
-      UK, and USA - plus a full B2B marketplace and AI pipelines that eliminated 60%+ of
-      manual operations work. I sit at a rare intersection: deep Shopify expertise, modern
-      React/Next.js skills, and domain knowledge inside the diamond and jewelry industry
-      almost no other developer has.
+      UK, and USA - plus a full B2B marketplace, a 3D rendering / AR-VR try-on SaaS built
+      with Three.js, and AI pipelines that eliminated 60%+ of manual operations work. I sit
+      at a rare intersection: deep Shopify expertise, modern React/Next.js and Three.js/3D
+      skills, and domain knowledge inside the diamond and jewelry industry almost no other
+      developer has.
     </>
   ),
   seo: {
-    title: "Ayush Varma - Software Engineer · Shopify · React · Next.js · AI Automation",
+    title: "Ayush Varma - Software Engineer · Shopify · React · Next.js · Three.js · AI Automation",
     description:
-      "Ayush Varma - Full-stack engineer specialising in Shopify development, React/Next.js, headless commerce, and AI automation. Shipped 4 international storefronts. Open to remote roles.",
+      "Ayush Varma - Full-stack engineer specialising in Shopify development, React/Next.js, headless commerce, Three.js/3D & AR-VR experiences, and AI automation. Shipped 4 international storefronts. Open to remote roles.",
     keywords: [
       "Ayush Varma",
       "Shopify developer",
@@ -72,6 +74,9 @@ const home = {
       "React developer",
       "Next.js engineer",
       "full-stack developer",
+      "Three.js developer",
+      "3D web developer",
+      "AR VR try-on developer",
       "AI automation",
       "headless commerce",
       "eCommerce engineer",
@@ -101,6 +106,10 @@ const about = {
         I work inside the diamond and jewelry industry in Surat - the diamond capital of the
         world. This gives me a perspective on commerce problems that most developers simply
         don't have. I don't just build features. I solve the actual business problem.
+        <br /><br />
+        Alongside commerce systems, I build 3D and AR/VR product experiences with Three.js and
+        React Three Fiber - photoreal rendering, virtual try-on, and interactive embeds -
+        aimed at the jewelry and luxury retail space.
         <br /><br />
         Currently deepening: TypeScript, system design, distributed systems, and building
         AI-powered Shopify apps as a side project for the jewelry industry.
@@ -221,7 +230,12 @@ const about = {
       {
         title: "Frontend - React & Next.js",
         description:
-          "React.js, Next.js, TypeScript, JavaScript (ES6+), Vue.js, HTML5, CSS3, Tailwind CSS, GSAP, AOS - production-grade, accessible, animated UIs.",
+          "React.js, Next.js, TypeScript, JavaScript (ES6+), Vue.js, HTML5, CSS3, Tailwind CSS - production-grade, accessible UIs.",
+      },
+      {
+        title: "3D & AR/VR",
+        description:
+          "Three.js, React Three Fiber, WebGL, GSAP (ScrollTrigger, timeline animations), AOS, photoreal 3D product rendering, AR/VR virtual try-on, GLTF/GLB/CAD model pipelines.",
       },
       {
         title: "Backend & APIs",
@@ -244,14 +258,14 @@ const about = {
 
 const blog = {
   label: "Blog",
-  title: "Writing about Shopify, AI Automation, and Building in Public",
+  title: "Writing about Shopify, 3D/AR-VR, AI Automation, and Building in Public",
   description: `Technical posts, build logs, and lessons from ${person.name} - engineering inside the diamond and jewelry industry.`,
 };
 
 const work = {
   label: "Work",
   title: "Projects & Case Studies",
-  description: `Production Shopify stores, full-stack apps, and AI automation projects by ${person.name}.`,
+  description: `Production Shopify stores, full-stack apps, 3D/AR-VR experiences, and AI automation projects by ${person.name}.`,
 };
 
 const gallery = {
@@ -312,6 +326,30 @@ const gallery = {
       alt: "Vaidehi Rayon",
       orientation: "horizontal",
       href: "https://vaidehirayon.com",
+    },
+    {
+      src: "/images/gallery/15.png",
+      alt: "i3dStudio - 3D Rendering & AR/VR Try-On SaaS (Three.js / React Three Fiber)",
+      orientation: "horizontal",
+      href: "https://i3dstudio.vercel.app",
+    },
+    {
+      src: "/images/gallery/16.png",
+      alt: "Hi-Lab Eye Hospital - GSAP Scroll & Motion Design",
+      orientation: "horizontal",
+      href: "https://eye.hi-labsolution.org",
+    },
+    {
+      src: "/images/gallery/17.png",
+      alt: "The Chiku Orchard - GSAP Scroll & Motion Design",
+      orientation: "horizontal",
+      href: "https://thechiku.in",
+    },
+    {
+      src: "/images/gallery/18.png",
+      alt: "Radiant Sun Energy - GSAP Scroll & Motion Design",
+      orientation: "horizontal",
+      href: "https://www.radiantsunenergy.com",
     },
   ],
 };
