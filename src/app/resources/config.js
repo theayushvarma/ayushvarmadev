@@ -1,3 +1,6 @@
+// Full origin, scheme included, NO trailing slash.
+// Always build URLs via absoluteUrl()/ogUrl() from "@/app/utils/url" —
+// never interpolate this into a `https://${baseURL}` template.
 const baseURL = "https://theayushvarma.vercel.app";
 
 const routes = {
@@ -13,14 +16,20 @@ const routes = {
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {};
 
+// Theme: moved off the stock Once UI demo palette (emerald brand + orange accent
+// + playful radii), which is instantly recognisable as an unmodified template.
+// Slate + cyan -> indigo is cold and instrument-like: it reads "real-time
+// graphics" rather than "SaaS marketing site", and cyan through to indigo is
+// what light actually does through a stone — the diamond story stated in the
+// design rather than only in the copy.
 const style = {
   theme: "dark",          // dark | light
-  neutral: "gray",        // sand | gray | slate
-  brand: "emerald",       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "orange",       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  neutral: "slate",       // sand | gray | slate
+  brand: "cyan",          // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "indigo",       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast",      // color | contrast
   solidStyle: "flat",     // flat | plastic
-  border: "playful",      // rounded | playful | conservative
+  border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all",      // all | micro | macro
 };
@@ -67,7 +76,11 @@ const display = {
 };
 
 const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
+  // Empty until a real endpoint exists. Paste the `action` attribute from a
+  // Mailchimp embedded-form snippet (or a Buttondown/ConvertKit form URL) here,
+  // then set newsletter.display = true in content.js.
+  // The previous value was a placeholder that made the form error on submit.
+  action: "",
   effects: {
     mask: {
       cursor: false,

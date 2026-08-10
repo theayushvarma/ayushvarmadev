@@ -6,22 +6,23 @@ import classNames from "classnames";
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from "@/app/resources";
 
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
 
 import { person, home } from "@/app/resources/content";
 import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
+import { absoluteUrl } from "@/app/utils/url";
 
 export async function generateMetadata() {
   return {
-    metadataBase: new URL(`https://${baseURL}`),
+    metadataBase: new URL(absoluteUrl()),
     title: home.title,
     description: home.description,
     openGraph: {
-      title: `${person.firstName}'s Portfolio`,
-      description: "Portfolio website showcasing my work.",
-      url: baseURL,
-      siteName: `${person.firstName}'s Portfolio`,
+      title: home.title,
+      description: home.description,
+      url: absoluteUrl(),
+      siteName: `${person.name} — Portfolio`,
       locale: "en_US",
       type: "website",
     },
@@ -50,13 +51,28 @@ type FontConfig = {
 };
 
 /*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
+	Heading + label typeface.
+
+	This was previously `undefined`, which meant --font-secondary was never
+	emitted, so `font-family: var(--font-family-heading)` was invalid at
+	computed-value time and silently inherited Inter — the site had no
+	typographic hierarchy at all.
+
+	Manrope is used because tokens/typography.scss asks for weight 800
+	(display-strong) and 300 (display-default); Manrope covers 200-800, so
+	neither weight gets synthesised into a fake bold at 5rem.
+
+	Loaded as a VARIABLE font (no `weight` array) — one download covers the whole
+	range. Listing weights explicitly fetches a separate file per weight, which
+	is what stalls `next dev` on a slow or restricted connection with
+	"The user aborted a request. Retrying 1/3...".
 */
-const secondary: FontConfig | undefined = undefined;
+const secondary: FontConfig = Manrope({
+  variable: "--font-secondary",
+  subsets: ["latin"],
+  display: "swap",
+});
 const tertiary: FontConfig | undefined = undefined;
-/*
- */
 
 const code = Source_Code_Pro({
   variable: "--font-code",

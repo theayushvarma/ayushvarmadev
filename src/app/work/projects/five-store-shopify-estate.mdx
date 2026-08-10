@@ -1,0 +1,55 @@
+---
+title: "A Five-Store Shopify Estate — One Storefront per Market"
+publishedAt: "2026-05-10"
+summary: "Australia, the UK, Germany, the US and India: five separate Shopify stores, five currencies, five custom Liquid themes on a shared section library — and why we deliberately did not use one multi-market store."
+images:
+  - "/images/gallery/2.png"
+  - "/images/gallery/5.png"
+  - "/images/gallery/6.png"
+team: []
+link: "https://ringsofaustralia.com.au"
+---
+
+## The setup
+
+Five live Shopify storefronts, one per market:
+
+| Store | Market | Currency |
+| --- | --- | --- |
+| [ringsofaustralia.com.au](https://ringsofaustralia.com.au) | Australia | AUD |
+| [ringsofuk.com](https://ringsofuk.com) | United Kingdom | GBP |
+| [ringsofgermany.com](https://ringsofgermany.com) | Germany | EUR |
+| [preciouscarbon.com](https://www.preciouscarbon.com) | United States | USD |
+| [premexa.in](https://premexa.in) | India | INR |
+
+Each has its own custom Liquid theme, its own catalogue, its own pricing, tax and shipping configuration, and its own merchandising.
+
+## The architectural decision
+
+The obvious move is one store with multi-market routing. We deliberately did not do that, and the reasoning is the part worth explaining.
+
+Each market has **its own legal entity, its own inventory and its own merchandising team**. Germany buys differently from Australia; the UK entity holds stock in Hatton Garden that the US entity cannot sell. A single store with market-level overrides would have forced one product catalogue and one merchandising owner onto five businesses that genuinely are not one business.
+
+So: separate stores.
+
+The honest trade-off is **duplicated theme deploys**. Five stores means five places for a bug fix to land, and drift between them is the failure mode that eats teams alive.
+
+## How the trade-off is paid for
+
+A **shared section library**. The themes are per-brand, but the sections, blocks and JSON templates underneath them are a common system built with the Shopify CLI — theme app extensions where the behaviour is genuinely shared, per-store overrides where it is not.
+
+The same applies below the theme: one analytics and tagging layer deployed identically across the estate, so reporting is comparable market to market instead of five dialects of the same event.
+
+If you view-source two of these stores, you will find the same asset bootstrap and the same tag container. That is the section library showing through.
+
+## What this involves day to day
+
+- Theme development with the **Shopify CLI** — sections, blocks, JSON templates, theme app extensions
+- Per-store catalogue, pricing, tax and shipping configuration
+- Currency and locale handling per storefront, including German-language content
+- Keeping five themes from drifting while still letting each brand look like itself
+- Core Web Vitals across all five, on mobile, in markets with very different network conditions
+
+## Stack
+
+Shopify · Liquid · Shopify CLI · theme app extensions · Admin API · Storefront API · GraphQL · metafields · webhooks

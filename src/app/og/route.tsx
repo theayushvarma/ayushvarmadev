@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { baseURL } from "@/app/resources";
+import { absoluteUrl } from "@/app/utils/url";
 import { person } from "@/app/resources/content";
 
 export const runtime = "edge";
@@ -52,7 +52,7 @@ export async function GET(request: Request) {
           }}
         >
           <img
-            src={"https://" + baseURL + person.avatar}
+            src={absoluteUrl(person.avatar)}
             style={{
               width: "12rem",
               height: "12rem",

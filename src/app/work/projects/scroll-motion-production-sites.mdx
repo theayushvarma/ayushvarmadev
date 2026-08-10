@@ -1,0 +1,50 @@
+---
+title: "Scroll-Driven Motion on Production Sites"
+publishedAt: "2026-01-20"
+summary: "Three live sites in three very different sectors — renewable energy, hospitality and healthcare — each with a motion system chosen to fit the brand without costing Core Web Vitals."
+images:
+  - "/images/gallery/18.png"
+  - "/images/gallery/17.png"
+  - "/images/gallery/16.png"
+team: []
+link: "https://www.radiantsunenergy.com"
+---
+
+## Three sites, three motion budgets
+
+Motion is not a single technique you apply everywhere. What a renewable-energy brand needs from scroll animation is not what a hospital needs, and the right answer is usually the smallest one that achieves the effect.
+
+### [radiantsunenergy.com](https://www.radiantsunenergy.com) — GSAP + ScrollTrigger
+
+The heaviest motion of the three, and the only one that justified a full timeline library. **GSAP with ScrollTrigger** drives scroll-linked sequences where elements move in a choreographed order rather than simply fading in as they cross a threshold.
+
+ScrollTrigger earns its bundle size when you need scrubbing — animation progress tied to scroll position rather than fired once on entry. If all you need is "reveal when visible", it does not.
+
+### [thechiku.in](https://thechiku.in) — AOS
+
+An event venue. The job is atmosphere: sections arriving gracefully as you move down a long, image-heavy page. That is exactly the problem **AOS** solves, at a fraction of the weight of a timeline library.
+
+Using GSAP here would have been a heavier dependency delivering an identical user-visible result.
+
+### [eye.hi-labsolution.org](https://eye.hi-labsolution.org) — custom scroll-reveal
+
+A healthcare site, where the priorities invert. Clarity and load speed matter more than choreography, and users are more likely to be on older devices and slower connections. Motion here is a small custom scroll-reveal system rather than a library — enough to give the page rhythm, not enough to get in the way.
+
+## The constraint that shaped all three
+
+Every one of these had to hold **Core Web Vitals on mobile**.
+
+Scroll animation is unusually good at destroying two metrics at once. Elements that animate in from a transform can cause layout shift if the reserved space is wrong, and animation libraries loaded in the critical path delay interactivity on exactly the devices least able to absorb it.
+
+So the rules were the same across all three:
+
+- animate `transform` and `opacity` only — never properties that trigger layout
+- reserve final layout space up front so reveals never shift the page
+- keep the motion library off the critical rendering path
+- respect `prefers-reduced-motion`
+
+The interesting decision was not how to animate. It was choosing a different tool per site, and being willing to use the lighter one twice.
+
+## Stack
+
+GSAP · ScrollTrigger · AOS · custom IntersectionObserver reveals · JavaScript (ES6+) · Core Web Vitals

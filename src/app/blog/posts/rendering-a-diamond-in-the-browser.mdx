@@ -1,0 +1,51 @@
+---
+title: "Rendering a Diamond in the Browser Without Melting the Phone"
+publishedAt: "2026-06-28"
+summary: "A diamond rendered with a standard PBR material looks like grey plastic. Making it look like a diamond is a physics problem. Making it run at 60fps on a mid-range Android is a budgeting problem."
+image: "/images/gallery/15.png"
+images:
+  - "/images/gallery/15.png"
+tag: "3D"
+team: []
+---
+
+Drop a ring model into a Three.js scene with a standard physically-based material and the metal will look fine. The stone will look like grey plastic.
+
+That gap is most of the work in 3D jewellery.
+
+## Why the default looks wrong
+
+Standard PBR is built around surface reflection. A diamond's appearance is dominated by what happens **inside** it: light enters, bends, bounces off the internal facets, splits into colour, and leaves somewhere else entirely.
+
+The three things that read as "diamond" to a human eye are:
+
+- **Refraction** — light bending on entry and exit. A diamond's refractive index is roughly 2.42, which is extreme, and it is why the stone looks like it contains something.
+- **Dispersion** — different wavelengths bending by different amounts. This is the coloured fire, and it is the single most recognisable signal. Without it, you have glass.
+- **Total internal reflection** — the reason a well-cut stone returns light upward out of the table instead of leaking it out the bottom. It is why *cut* is graded at all.
+
+Miss those and no amount of lighting rescues it.
+
+## Why you cannot just turn them on
+
+All three are expensive, and they are expensive in the way that hurts most: per-pixel, every frame, on a surface with many facets.
+
+A ring viewer that stutters is worse than a photograph. The customer's read is not "this site has ambitious graphics", it is "this site is broken." So the real engineering question is never "how realistic can this be" — it is **how much optical realism fits in the frame budget of the worst device that matters.**
+
+## The budget, roughly
+
+The approach that worked:
+
+- **Bake what does not move.** The lighting environment is fixed. Anything derived only from the environment can be precomputed instead of solved per frame.
+- **Spend the per-frame budget where the eye looks.** The centre stone gets the expensive treatment. Melee stones — the small accent diamonds — get a cheaper approximation, because at their size nobody resolves individual dispersion.
+- **Scale by device.** Detect capability and drop features in a deliberate order, so a weak device loses fire before it loses framerate.
+- **Studio lighting is a feature, not a default.** Jewellery photography has conventions — key, fill, and the reflections that define an edge. A generic HDRI produces something technically lit and commercially useless.
+
+## The unglamorous half
+
+The rendering is the interesting part. The part that actually consumed the time was **CAD files being nothing like game assets**.
+
+Manufacturing files come out of Rhino with arbitrary scale, arbitrary transforms, no material naming convention, and no notion that anyone would ever look at them. Nothing in the file says *this surface is gold and that one is a diamond* — but you need to know, because they need completely different materials.
+
+So there is an import analyser that inspects geometry and material slots and infers metals, stones and prongs. It exists because the first version assumed clean input and broke on essentially every real file it was given.
+
+That is the honest ratio in production 3D: a minority of the work is the shader, and most of it is making unpredictable real-world assets survive contact with your pipeline.

@@ -23,6 +23,7 @@ import {
   HiArrowRight,
   HiOutlineEye,
   HiOutlineEyeSlash,
+  HiPhone,
 } from "react-icons/hi2";
 
 import {
@@ -33,7 +34,7 @@ import {
   PiImageDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -67,4 +68,6 @@ export const iconLibrary: Record<string, IconType> = {
   x: FaXTwitter,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+  phone: HiPhone,
+  whatsapp: FaWhatsapp,
 };

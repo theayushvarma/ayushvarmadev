@@ -1,0 +1,143 @@
+%----------------------------------------------------------------------------------------
+% AYUSH VARMA - 3D / FRONTEND VARIANT
+% Target: 3D software engineer roles + frontend web developer roles
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article}
+
+\usepackage[left=0.5in, top=0.32in, right=0.5in, bottom=0.32in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\definecolor{primary}{RGB}{18, 52, 102}
+\definecolor{textgray}{RGB}{60,60,60}
+
+% Phone confirmed 10 Aug 2026. Same number is the WhatsApp number.
+\newcommand{\myphone}{\href{https://wa.me/918732953410}{+91 87329 53410}}
+
+\hypersetup{colorlinks=true, urlcolor=primary}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\titleformat{\section}{\color{primary}\bfseries\large}{}{0em}{}[\color{primary}\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{leftmargin=1.15em, itemsep=0pt, topsep=0pt, parsep=0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER ---
+\begin{center}
+{\Huge \bfseries Ayush Varma}\\[3pt]
+{\small\color{textgray}
+  3D / WebGL Engineer \textbullet\ Frontend Engineer \textbullet\ Three.js \& React Three Fiber \textbullet\ React, Next.js, TypeScript
+}\\[3pt]
+{\small
+  \myphone \quad
+  \href{mailto:vayush798@gmail.com}{vayush798@gmail.com} \quad
+  \href{https://linkedin.com/in/theayushvarma}{linkedin.com/in/theayushvarma} \quad
+  \href{https://github.com/theayushvarma}{github.com/theayushvarma}
+}\\[2pt]
+{\small Surat, Gujarat, India \textbullet\ Open to Remote / Hybrid / Relocation}
+\end{center}
+
+\hrule
+
+%--- SUMMARY ---
+\section*{Summary}
+Frontend engineer with 3 years shipping production React, Next.js and TypeScript interfaces, and roughly a year building real-time 3D for the web with Three.js and React Three Fiber. Built and shipped i3dStudio, a live product that converts CAD files into photoreal interactive 3D product viewers with browser AR try-on, embeddable anywhere as a one-line iframe. 12 live production builds across 9 brands, with a working record on Core Web Vitals, accessibility and scroll-driven motion.
+
+%--- SKILLS ---
+\section*{Technical Skills}
+\textbf{3D \& Real-Time Graphics:} Three.js, React Three Fiber, WebGL, GLTF/GLB pipelines, CAD ingestion (3DM, STL, OBJ, FBX, DAE, PLY), PBR materials, physically-based lighting, refraction and dispersion, turntable and 4K render export, browser AR try-on with camera tracking \\
+\textbf{Frontend:} JavaScript (ES6+), TypeScript, React, Next.js, Vue.js, HTML5, CSS/SCSS, Tailwind CSS, responsive design \\
+\textbf{Motion:} GSAP with ScrollTrigger, AOS, custom scroll-reveal systems, timeline and scroll-driven animation \\
+\textbf{Performance \& Quality:} Core Web Vitals, code splitting, lazy loading, asset optimisation, WCAG accessibility, cross-browser QA \\
+\textbf{Backend \& APIs:} Node.js, Express, GraphQL, REST, MongoDB, MySQL, OpenAPI, typed SDKs, LLM automation pipelines \\
+\textbf{Commerce:} Shopify (Liquid themes, custom apps in Remix, Storefront and Admin GraphQL), published Shopify App Store developer \quad \textbf{Tools:} Git, Vercel, CI/CD \\
+
+%--- PROJECTS ---
+\section*{Selected Projects}
+
+\textbf{i3dStudio --- CAD-to-Web 3D Viewer \& AR Try-On Platform} \hfill \href{https://i3dstudio.vercel.app}{i3dstudio.vercel.app}
+\begin{itemize}
+  \item Built the full product: converts CAD and mesh files (3DM, GLB, GLTF, STL, OBJ, FBX, DAE, PLY) into photoreal interactive 3D viewers in Three.js and React Three Fiber
+  \item Implemented real diamond refraction and dispersion with studio lighting, backed by a library of 115+ PBR materials and 100+ starter designs
+  \item Wrote the import analyser that auto-detects metals, stones and prongs, turning a raw CAD upload into a configurable product without manual tagging
+  \item Shipped browser AR try-on in three modes --- live camera hand tracking, photo upload and model-hand preview --- with US, UK and EU ring-size estimation
+  \item Distributed the viewer as one-line domain-locked iframe embeds, plus a REST API, typed SDK and OpenAPI spec for third-party integration
+  \item Built the offline render pipeline for 4K stills and turntable video, metered by a credit system across four billing tiers
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Ring Configurator --- Published on Two Marketplaces} \hfill \href{https://apps.shopify.com/tdp-ring-builder}{apps.shopify.com/tdp-ring-builder}
+\begin{itemize}
+  \item Interactive 3D ring configurator published on the Shopify App Store since 11 Jul 2024 as Diamond Engagement RingBuilder --- two years in market at \$1{,}499 one-time, rated 5.0 out of 5
+  \item Also shipped to the WordPress.org plugin directory with WooCommerce integration, so the same configurator runs on both platforms
+  \item Merges physical and virtual diamond inventory behind one configurator UI with real-time feed integration, engraving, custom markups, and configurable colors, filters and search
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Motion \& Interactive Web --- Production Builds}
+\begin{itemize}
+  \item Scroll-driven motion and animation across live sites: GSAP with ScrollTrigger on \href{https://www.radiantsunenergy.com}{radiantsunenergy.com}, and AOS with custom scroll-reveal systems on \href{https://thechiku.in}{thechiku.in} and \href{https://eye.hi-labsolution.org}{eye.hi-labsolution.org}
+  \item Tuned each animation system to hold Core Web Vitals on mobile, keeping motion off the critical rendering path
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{The Diamond Port --- B2B/B2C Marketplace Frontend} \hfill \href{https://thediamondport.com}{thediamondport.com}
+\begin{itemize}
+  \item Next.js and Tailwind frontend over a 2,000+ SKU multi-supplier catalog with API feed integration and white-label iframe embedding, operating across US, AU, UK, India, Belgium and Hong Kong
+\end{itemize}
+
+%--- EXPERIENCE ---
+\section*{Experience}
+
+\textbf{Senior Shopify Engineer} \hfill Apr 2026 -- Present \\
+\textit{The Diamond Port, Surat, India}
+\begin{itemize}
+  \item Own the frontend and 3D surface across a five-store Shopify estate --- one storefront per market in Australia, the UK, Germany, the US and India --- and maintain the company's published App Store app in Remix, Node.js and React
+  \item Build LLM automation pipelines in Node.js for inventory, reporting and catalog enrichment, removing roughly 15 hours of manual operations per week
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Full Stack Shopify Developer} \hfill Apr 2025 -- Mar 2026 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Started and led the 3D commerce track --- Three.js and React Three Fiber configurators, GLTF/GLB asset pipelines and CAD ingestion --- which became i3dStudio
+  \item Built distinct custom themes per brand, live at \href{https://ringsofaustralia.com.au}{ringsofaustralia.com.au} (AUD), \href{https://ringsofuk.com}{ringsofuk.com} (GBP), \href{https://ringsofgermany.com}{ringsofgermany.com} (EUR), \href{https://www.preciouscarbon.com}{preciouscarbon.com} (USD) and \href{https://premexa.in}{premexa.in} (INR)
+  \item Built the Next.js and Tailwind marketplace frontend at thediamondport.com and integrated payment, logistics and analytics services over GraphQL and REST
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Frontend Engineer (React \& Vue)} \hfill Apr 2024 -- Mar 2025 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Built the ring configurator that shipped to the Shopify App Store and WordPress.org in Jul 2024, and have owned every release since
+  \item Built the shared component library adopted as the company UI standard, cutting average feature build time by roughly 30\% across concurrently running projects
+  \item Shipped production React and Vue.js interfaces across international markets and drove Core Web Vitals work --- code splitting, lazy loading, asset strategy --- alongside WCAG accessibility practices
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{React.js Intern} \hfill Oct 2023 -- Mar 2024 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Shipped production React components and REST API integrations into live storefronts, working in a Git pull-request and code-review workflow
+\end{itemize}
+
+%--- EDUCATION ---
+\section*{Education}
+\textbf{MCA, Artificial Intelligence \& Machine Learning} --- Parul University \textbullet\ Grade A \hfill Jun 2024 -- May 2026 \\
+\textbf{BCA} --- Veer Narmad South Gujarat University \textbullet\ Grade A \hfill Jun 2021 -- Apr 2024
+
+\end{document}

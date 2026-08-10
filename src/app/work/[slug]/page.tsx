@@ -6,6 +6,7 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { absoluteUrl, ogUrl } from "@/app/utils/url";
 
 interface WorkParams {
   params: {
@@ -35,7 +36,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
     image,
     team,
   } = post.metadata;
-  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
+  let ogImage = image ? absoluteUrl(image) : ogUrl(title);
 
   return {
     title,
@@ -47,7 +48,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
       description,
       type: "article",
       publishedTime,
-      url: `https://${baseURL}/work/${post.slug}`,
+      url: absoluteUrl(`/work/${post.slug}`),
       images: [
         {
           url: ogImage,
@@ -89,9 +90,9 @@ export default function Project({ params }: WorkParams) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `https://${baseURL}${post.metadata.image}`
-              : `https://${baseURL}/og?title=${post.metadata.title}`,
-            url: `https://${baseURL}/work/${post.slug}`,
+              ? absoluteUrl(post.metadata.image)
+              : ogUrl(post.metadata.title),
+            url: absoluteUrl(`/work/${post.slug}`),
             author: {
               "@type": "Person",
               name: person.name,

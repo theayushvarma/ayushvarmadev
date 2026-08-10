@@ -1,88 +1,88 @@
-# Hi there, I'm Ayush Varma 👋
+# Ayush Varma — Portfolio
 
-**Shopify Theme & App Developer | MERN Full-Stack Engineer | AI in eCommerce**  
-2+ years building scalable eCommerce solutions, headless stores, custom Shopify apps, and AI-driven automation.  
+Senior Shopify Engineer · Shopify Apps · 3D / WebGL · React & Next.js
 
-📍 Surat, Gujarat, India  
-🌐 [Portfolio](https://ayushvarmadev.vercel.app) | [LinkedIn](https://www.linkedin.com/in/ayushvarmadev/) | [GitHub](https://github.com/ayushvarmadev) | [Email](mailto:vayush798@gmail.com)
+Live at **[theayushvarma.vercel.app](https://theayushvarma.vercel.app)**
 
----
-
-## 🧰 Skills
-
-### Frontend
-- React.js | Next.js | Vue.js | Liquid | HTML5 | CSS3 | Tailwind CSS | Bootstrap
-- GSAP | AOS | Animations | Responsive & Accessible UIs
-
-### Backend
-- Node.js | Express | MongoDB | MySQL | Firebase
-- API Development: REST & GraphQL (Shopify Storefront/Admin)
-
-### Shopify & eCommerce
-- Theme Customization | Polaris Components | Checkout & Subscription Customization
-- Private & Public App Development | Headless Commerce Integrations
-
-### AI & Automation
-- Python Automation | ML for Recommendations & Personalization | Chatbots
-- AI-driven eCommerce Tooling & Research
-
-### Tools
-- Git | Axios | Redux | Vuex | VS Code | Terminal & CLI
+- **LinkedIn** — [linkedin.com/in/theayushvarma](https://linkedin.com/in/theayushvarma)
+- **GitHub** — [github.com/theayushvarma](https://github.com/theayushvarma)
+- **Email** — vayush798@gmail.com
 
 ---
 
-## 💼 Experience
+## What's in here
 
-### The Diamond Port, Surat, Gujarat
-**Full Stack Developer** (Apr 2025 – Present)  
-- Built high-performance websites, SaaS products, and Shopify solutions with MERN + Liquid  
-- Focus: Headless commerce, app automation, performance optimization, GraphQL integrations  
+A Next.js 14 (App Router) portfolio built on the [Once UI Magic Portfolio](https://once-ui.com) template, customised throughout.
 
-**Frontend Web Developer** (Apr 2024 – Mar 2025)  
-- Led frontend development for main site & multiple Shopify stores  
-- Implemented responsive, animated, and accessible UIs (React, Vue, Sass, GSAP, AOS)
+| Route | Purpose |
+| --- | --- |
+| `/` | Hero, featured case studies, latest posts |
+| `/about` | Bio, work history, education, skills |
+| `/work`, `/work/[slug]` | Case studies (MDX) |
+| `/blog`, `/blog/[slug]` | Technical posts (MDX) |
+| `/project` | Project gallery — every tile links to a live site |
+| `/resume` | Resume PDF viewer + download |
+| `/og` | Dynamic OpenGraph image generation (edge runtime) |
 
-**React.js Intern** (Oct 2023 – Mar 2024)  
-- Developed dynamic web applications and improved frontend architecture & UX  
+## Stack
 
----
+Next.js 14 · React 18 · TypeScript · SCSS + Once UI design system · MDX (`next-mdx-remote`, `gray-matter`) · Vercel
 
-## 📂 Selected Projects
+## Content
 
-| Project | Description | Link |
-|---------|-------------|------|
-| The Diamond Port (v2) | Animated jewelry website using React, Tailwind, GSAP | [Visit](https://thediamondport.com) |
-| TDP Ring Builder (Shopify) | Custom ring customization app | [Visit](https://apps.shopify.com/tdp-ring-builder) |
-| Velar Diamonds | Shopify store with headless integration | [Visit](https://velardiamonds.com) |
-| Premexa | Tea powder e-commerce site using Next.js & Tailwind | [Visit](https://premexa.in) |
-| Rings of Australia | Shopify theme improvements | [Visit](https://ringsofaustralia.com.au) |
-| Precious Carbon | Luxury diamond e-commerce site | [Visit](https://preciouscarbon.com/) |
+Almost everything user-facing lives in two files:
 
----
+- **`src/app/resources/content.js`** — person, social, home, about, work history, skills, gallery
+- **`src/app/resources/config.js`** — `baseURL`, route toggles, theme tokens, background effects
 
-## 🎓 Education
+Case studies are MDX in `src/app/work/projects/`; posts are MDX in `src/app/blog/posts/`. Frontmatter contract is defined by the `Metadata` type in `src/app/utils/utils.ts`.
 
-- **Master of Computer Applications (MCA – AI/ML)**, Parul University, Vadodara (Jun 2024 – May 2026)  
-- **Bachelor of Computer Applications – Web Development**, VNSGU, Surat (Jun 2021 – Apr 2024) - Grade: A, Top 10 in Class  
+## URL conventions
 
----
+`baseURL` in `config.js` includes the scheme and has **no trailing slash**. Always build URLs with the helpers:
 
-## 🚀 Fun & Extra-Curricular
+```ts
+import { absoluteUrl, ogUrl } from "@/app/utils/url";
+```
 
-- Built a video scraper in Node.js to create 360° product views with IP rotation & custom user agents  
-- Experimenting with AI/ML for product recommendations and personalization in eCommerce  
+Never interpolate `` `https://${baseURL}` `` — that produces `https://https/...`. Acceptance check:
 
----
+```bash
+grep -rn 'https://${baseURL}' src/   # must return nothing
+```
 
-## 📈 GitHub Stats
+## Resume
 
-![Ayush's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ayushvarmadev&show_icons=true&theme=radical)
+Sources are LaTeX at the repo root:
 
----
+| File | Target |
+| --- | --- |
+| `resume.tex` | Master, dual-positioned |
+| `resume-commerce.tex` | Shopify / commerce roles |
+| `resume-frontend3d.tex` | 3D and frontend roles |
 
-## 💌 Connect with Me
+There is no local LaTeX toolchain. Compile on [Overleaf](https://overleaf.com) (new blank project → paste → Recompile → download), then save the PDF to `public/pdf/resume.pdf`.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Varma-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ayushvarmadev/)  
-[![Portfolio](https://img.shields.io/badge/Portfolio-Website-blue?style=for-the-badge&logo=google-chrome)](https://ayushvarmadev.vercel.app)  
-[![Email](https://img.shields.io/badge/Email-vayush798@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:vayush798@gmail.com)
+## Development
 
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # must pass before committing
+```
+
+## Gallery screenshots
+
+Captured headlessly with Edge at 1600×900, cropped to 1600×730:
+
+```powershell
+& "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" `
+  --headless=new --disable-gpu --hide-scrollbars `
+  --window-size=1600,900 --virtual-time-budget=2500 `
+  --user-data-dir="$env:TEMP\edge-shot" `
+  --screenshot="public\images\gallery\NN.png" "https://example.com"
+```
+
+Keep `--virtual-time-budget` around 2500ms: long enough for the hero to render, short enough to beat most newsletter popups.
+
+**Re-verify every gallery link before an interview or application.** A dead link costs more than a missing one.

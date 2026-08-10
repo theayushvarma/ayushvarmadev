@@ -3,11 +3,12 @@ import { Column } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { baseURL } from "@/app/resources";
 import { person, work } from "@/app/resources/content";
+import { absoluteUrl, ogUrl } from "@/app/utils/url";
 
 export async function generateMetadata() {
   const title = work.title;
   const description = work.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = ogUrl(title);
 
   return {
     title,
@@ -16,7 +17,7 @@ export async function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/work/`,
+      url: absoluteUrl("/work"),
       images: [
         {
           url: ogImage,
@@ -47,8 +48,8 @@ export default function Work() {
             "@type": "CollectionPage",
             headline: work.title,
             description: work.description,
-            url: `https://${baseURL}/projects`,
-            image: `${baseURL}/og?title=Design%20Projects`,
+            url: absoluteUrl("/work"),
+            image: ogUrl("Design Projects"),
             author: {
               "@type": "Person",
               name: person.name,
@@ -57,8 +58,8 @@ export default function Work() {
               "@type": "CreativeWork",
               headline: project.metadata.title,
               description: project.metadata.summary,
-              url: `https://${baseURL}/projects/${project.slug}`,
-              image: `${baseURL}/${project.metadata.image}`,
+              url: absoluteUrl(`/work/${project.slug}`),
+              image: absoluteUrl(`/${project.metadata.image}`),
             })),
           }),
         }}

@@ -6,6 +6,7 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { absoluteUrl, ogUrl } from "@/app/utils/url";
 
 interface BlogParams {
   params: {
@@ -35,7 +36,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
     image,
     team,
   } = post.metadata;
-  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
+  let ogImage = image ? absoluteUrl(image) : ogUrl(title);
 
   return {
     title,
@@ -45,7 +46,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
       description,
       type: "article",
       publishedTime,
-      url: `https://${baseURL}/blog/${post.slug}`,
+      url: absoluteUrl(`/blog/${post.slug}`),
       images: [
         {
           url: ogImage,
@@ -87,9 +88,9 @@ export default function Blog({ params }: BlogParams) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `https://${baseURL}${post.metadata.image}`
-              : `https://${baseURL}/og?title=${post.metadata.title}`,
-            url: `https://${baseURL}/blog/${post.slug}`,
+              ? absoluteUrl(post.metadata.image)
+              : ogUrl(post.metadata.title),
+            url: absoluteUrl(`/blog/${post.slug}`),
             author: {
               "@type": "Person",
               name: person.name,
