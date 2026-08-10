@@ -1,0 +1,42 @@
+---
+title: "The Diamond Port — A Multi-Supplier B2B Diamond Marketplace"
+publishedAt: "2026-03-05"
+summary: "Replacing a manual, WhatsApp-and-spreadsheet wholesale process with a Next.js marketplace aggregating 2,000+ SKUs from live supplier feeds across six countries."
+images:
+  - "/images/gallery/1.png"
+  - "/images/gallery/4.png"
+team: []
+link: "https://thediamondport.com"
+---
+
+## The problem
+
+Wholesale diamond trading ran on WhatsApp, email and spreadsheets. A buyer wanted a 1.5ct round, VS1, no BGM, eye-clean. Someone checked several supplier lists by hand, replied with options, negotiated, and re-keyed the order.
+
+Every step was manual, every price was a point-in-time guess, and cross-border pricing errors were routine — because the person quoting was mentally converting currency and duty on the fly.
+
+## What I built
+
+[thediamondport.com](https://thediamondport.com) — a marketplace that aggregates **multiple supplier inventories behind one search**, built in **Next.js and Tailwind**.
+
+**Aggregation.** Supplier stock arrives as API feeds in incompatible shapes and refresh cadences. The ingestion layer normalises them into one schema, so a buyer filters across 2,000+ SKUs without knowing or caring which supplier holds the stone.
+
+**Search that matches how the trade actually thinks.** Not generic e-commerce facets — the filters are the trade's own vocabulary: cut, colour, clarity, certificate, and quality parameters like *no BGM* and *eye clean* that do not exist in any standard product schema.
+
+**Evidence per stone.** Video, images and the grading certificate attached to each listing, because nobody buys a diamond from a text row.
+
+**Distribution beyond the site.** An **API feed** and **white-label iframe** so partner jewellers can surface the same inventory inside their own sites — which is how a marketplace grows without growing its own traffic.
+
+## Scale and reach
+
+2,000+ SKUs from multiple suppliers, operating across the US, Australia, the UK, India, Belgium and Hong Kong — six markets, each with its own pricing, currency and logistics reality.
+
+## What was hard
+
+**Feed volatility.** Stones sell. A listing that was valid ninety seconds ago may be gone, and showing a buyer something they cannot have is worse than showing them less. Cache lifetimes had to be short enough to stay honest and long enough that the catalogue stayed fast.
+
+**No canonical schema.** Every supplier describes a diamond slightly differently. Normalisation is where most of the real work went, and it is never finished — each new supplier brings a new dialect.
+
+## Stack
+
+Next.js · React · Tailwind CSS · Node.js · REST and GraphQL APIs · supplier feed ingestion · iframe embedding

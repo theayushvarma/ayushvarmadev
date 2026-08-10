@@ -1,0 +1,49 @@
+---
+title: "What's Actually Plus-Gated in Shopify Checkout Extensibility"
+publishedAt: "2026-08-04"
+summary: "Most answers to this are wrong in one direction or the other. Here is the line as it actually falls in 2026 — and the non-Plus deadline that is three weeks away."
+image: "/images/gallery/10.png"
+images:
+  - "/images/gallery/10.png"
+tag: "Shopify"
+team: []
+---
+
+"You need Plus for checkout customisation" is the answer you will usually get. It is close enough to be useful and wrong often enough to cost you a project. The line is more specific than that.
+
+## Shopify Functions: available on every plan — with one catch
+
+Functions run on all plans **when they are distributed through a public app** from the Shopify App Store. Discount, Cart and Checkout Validation, Delivery Customization, Payment Customization, Cart Transform and Pickup Point are all live for non-Plus merchants that way.
+
+The catch is the distribution model, not the plan:
+
+> **Custom apps containing Function APIs are Plus-only. Public App Store apps containing the same Functions are not.**
+
+So a merchant on Shopify or Advanced can absolutely get Function-powered behaviour. They just cannot get it from a one-off custom app built only for them — it has to come through a published app.
+
+That single distinction explains most of the confusion in this area.
+
+## Checkout UI extensions: this is where Plus actually matters
+
+UI extensions on the **core checkout steps — Information, Shipping, Payment — require Plus.** Full stop. So does the complete Checkout Branding API and per-market checkout configuration.
+
+What a non-Plus merchant *does* get:
+
+- app blocks on the **Thank You** and **Order Status** pages
+- colours and fonts through the checkout editor
+
+That is a real capability, and it covers a surprising amount of post-purchase work. It is not the same as owning the payment step.
+
+## The deadline nobody is talking about
+
+Plus stores had to migrate their Thank You and Order Status pages by **28 August 2025**. That one got attention.
+
+The non-Plus deadline is **26 August 2026**.
+
+If you are reading this when it was published, that is three weeks away, and it applies to the far larger population of stores. Any store still relying on legacy `additional_scripts` on those pages is on a clock. The migration path is app blocks and Functions — which loops back to the first section: the public-app route is how a non-Plus store gets there.
+
+## Why the precision is worth having
+
+It is the difference between "we'd need to upgrade you to Plus" and "we can do this on your current plan, through a published app, and here's the deadline you should be planning around anyway."
+
+One of those answers loses the project. The other sounds like someone who has actually shipped on the platform.

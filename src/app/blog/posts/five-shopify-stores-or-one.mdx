@@ -1,0 +1,48 @@
+---
+title: "Five Shopify Stores or One? A Multi-Market Decision"
+publishedAt: "2026-04-12"
+summary: "The default advice is one store with market routing. We ran five separate stores instead — here is the reasoning, the cost we accepted, and how we paid for it."
+image: "/images/gallery/19.png"
+images:
+  - "/images/gallery/19.png"
+tag: "Shopify"
+team: []
+---
+
+Ask how to sell into five countries on Shopify and the default answer is one store with multi-market routing. It is usually right. It was not right for us, and the reasoning is worth writing down because the trade-off is real in both directions.
+
+## What the default gets right
+
+One store means one catalogue, one theme to deploy, one set of metafields, one place a bug gets fixed. Currency and locale are handled for you. Operationally it is dramatically simpler, and if your markets are genuinely the same business selling the same catalogue in different currencies, take it.
+
+## Why we did not
+
+Our five markets — Australia, the UK, Germany, the US and India — are not one business wearing five hats.
+
+Each has **its own legal entity**. Each holds **its own inventory**; the UK entity has stock physically sitting in Hatton Garden that the US entity cannot sell. Each has **its own merchandising team** making independent decisions about what to feature.
+
+A single store forces one product catalogue and, in practice, one merchandising owner. We would have spent our time building overrides to simulate separation that already existed in the real world — and every override is a place for a market to accidentally publish into another market's storefront.
+
+So: five stores.
+
+## The cost, stated honestly
+
+**Duplicated deploys.** Five stores is five places a theme fix has to land.
+
+And the failure mode is not the deploy — it is **drift**. Store three gets a fix, store five does not, and six months later they are different codebases that merely look similar. That is the thing that quietly eats teams running multi-store estates.
+
+## How you pay for it
+
+A **shared section library**. The themes are per-brand and are allowed to look different, but the sections, blocks and JSON templates underneath are one system, built with the Shopify CLI. Theme app extensions carry the genuinely shared behaviour; per-store settings carry the rest.
+
+The same discipline below the theme: **one analytics and tagging layer**, deployed identically everywhere. If reporting is not identical across stores, you cannot compare markets, and the whole point of running five was that each market is its own business worth understanding.
+
+The test is simple: view-source two stores in the estate. If the shared scaffolding is recognisably the same, the library is holding. If it is not, drift has already started.
+
+## How to decide
+
+One store, when the markets are the same business in different currencies and the catalogue is shared.
+
+Separate stores, when markets differ by **legal entity, inventory ownership or merchandising authority** — and then invest immediately in the shared library, because without it you have not built an estate, you have built five one-off sites that will diverge.
+
+The mistake is not picking either one. It is picking separate stores and skipping the library.

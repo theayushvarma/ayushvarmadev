@@ -1,4 +1,5 @@
 import { baseURL } from "@/app/resources";
+import { absoluteUrl } from "@/app/utils/url";
 
 export default function robots() {
   return {
@@ -7,6 +8,6 @@ export default function robots() {
         userAgent: "*",
       },
     ],
-    sitemap: `${baseURL}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

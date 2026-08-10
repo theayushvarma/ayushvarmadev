@@ -20,6 +20,17 @@
 .DS_Store
 *.pem
 
+# personal career docs — not for a public repo
+linkedin.txt
+LINKEDIN.md
+INTERVIEW-TRANSFORM.md
+
+# LaTeX build artifacts (resumes are compiled on Overleaf)
+*.aux
+*.log
+*.out
+*.synctex.gz
+
 # debug
 npm-debug.log*
 yarn-debug.log*

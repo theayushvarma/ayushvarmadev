@@ -1,0 +1,45 @@
+---
+title: "i3dStudio — Turning CAD Files into Photoreal 3D Product Viewers"
+publishedAt: "2026-06-15"
+summary: "A product that ingests raw jewellery CAD files and returns an interactive, photoreal 3D viewer with browser AR try-on — embeddable in any storefront with one line of HTML."
+images:
+  - "/images/gallery/15.png"
+team: []
+link: "https://i3dstudio.vercel.app"
+---
+
+## The problem
+
+Every jewellery manufacturer already has 3D models. They sit in CAD files — `.3dm` from Rhino, plus the usual `.stl`, `.obj`, `.fbx` exports — used for manufacturing, then thrown away. Meanwhile the same company pays a photographer to shoot the physical piece for the website.
+
+The model is right there. It is just in a format the web cannot use, lit for machining rather than for looking at, and untagged: nothing in the file says *this surface is gold, that one is a diamond.*
+
+## What I built
+
+[i3dStudio](https://i3dstudio.vercel.app) takes the CAD file and returns a viewer a customer can spin, zoom and try on.
+
+**Ingestion.** Accepts 3DM, GLB, GLTF, STL, OBJ, FBX, DAE and PLY. An import analyser inspects geometry and material slots to **auto-detect metals, stones and prongs**, so a raw upload becomes a configurable product without anyone hand-tagging surfaces.
+
+**Rendering.** Built on **Three.js and React Three Fiber**. Diamonds are the hard part — a stone rendered with a normal PBR material looks like grey glass. Getting it right needs real refraction and dispersion, plus a studio lighting rig that reads as jewellery photography. The library ships 115+ PBR materials and 100+ starter designs.
+
+**AR try-on**, in three modes because no single one works everywhere:
+
+1. live camera with hand tracking
+2. photo upload, for users who will not grant camera permission
+3. a studio model-hand preview, which always works
+
+…with ring-size estimation in US, UK and EU sizing.
+
+**Distribution.** This is the part that makes it a product rather than a demo. The viewer ships as a **one-line, domain-locked iframe embed**, plus a **REST API, a typed SDK and an OpenAPI spec**. A Shopify merchant drops in one tag; a larger integrator drives it programmatically.
+
+**Rendering pipeline.** Offline 4K stills and turntable video export, metered by a credit system across four billing tiers.
+
+## What was hard
+
+Photoreal and real-time pull in opposite directions. Refraction is expensive, and a ring viewer that stutters on a mid-range phone is worse than a photograph. Most of the engineering was budget management: how much optical realism can be bought before frame time collapses, and what can be baked ahead of time instead of solved per frame.
+
+The second hard problem was the messiness of real CAD. Manufacturing files are not built for rendering — inconsistent scale, arbitrary transforms, no material conventions. The analyser exists because assuming clean input meant it broke on nearly every real file.
+
+## Stack
+
+Three.js · React Three Fiber · WebGL · Next.js · TypeScript · Node.js · GLTF/GLB pipelines

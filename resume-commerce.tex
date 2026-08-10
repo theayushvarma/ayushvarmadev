@@ -1,0 +1,120 @@
+%----------------------------------------------------------------------------------------
+% AYUSH VARMA - COMMERCE VARIANT
+% Target: Transform Solutions - Full Stack Shopify Developer
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article}
+
+\usepackage[left=0.5in, top=0.32in, right=0.5in, bottom=0.32in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\definecolor{primary}{RGB}{18, 52, 102}
+\definecolor{textgray}{RGB}{60,60,60}
+
+% Phone confirmed 10 Aug 2026. Same number is the WhatsApp number.
+\newcommand{\myphone}{\href{https://wa.me/918732953410}{+91 87329 53410}}
+
+\hypersetup{colorlinks=true, urlcolor=primary}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\titleformat{\section}{\color{primary}\bfseries\large}{}{0em}{}[\color{primary}\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{leftmargin=1.15em, itemsep=0pt, topsep=0pt, parsep=0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER ---
+\begin{center}
+{\Huge \bfseries Ayush Varma}\\[3pt]
+{\small\color{textgray}
+  Full Stack Shopify Developer \textbullet\ Liquid Themes \textbullet\ Remix / Node Apps \textbullet\ Checkout Extensibility \textbullet\ Platform Migrations
+}\\[3pt]
+{\small
+  \myphone \quad
+  \href{mailto:vayush798@gmail.com}{vayush798@gmail.com} \quad
+  \href{https://linkedin.com/in/theayushvarma}{linkedin.com/in/theayushvarma} \quad
+  \href{https://github.com/theayushvarma}{github.com/theayushvarma}
+}\\[2pt]
+{\small Surat, Gujarat, India \textbullet\ Open to Remote / Hybrid / Relocation}
+\end{center}
+
+\hrule
+
+%--- SUMMARY ---
+\section*{Summary}
+Full stack Shopify developer with 3 years building and maintaining production commerce systems end to end: Liquid themes, custom apps in Remix and Node.js, checkout extensibility, and platform migrations from Magento, WooCommerce and BigCommerce. Shipped the same ring configurator to two public marketplaces --- the Shopify App Store (live since Jul 2024, rated 5.0 out of 5) and the WordPress.org plugin directory with WooCommerce integration. Delivered 12 live production builds across 9 brands and 5 currencies --- multi-client surface area at agency cadence, owned in house from audit and build through launch, documentation and handover.
+
+%--- SKILLS ---
+\section*{Core Technical Skills}
+\textbf{Languages \& Markup:} JavaScript (ES6+), TypeScript, HTML5, CSS/SCSS, Shopify Liquid, GraphQL, SQL \\
+\textbf{Shopify:} Shopify CLI, theme development (sections, blocks, JSON templates, theme app extensions), custom app development (Remix, Node.js, React, App Bridge, Polaris, OAuth + session storage), Shopify Functions, checkout extensibility, Admin API, Storefront API, webhooks, metafields, multi-store operations \\
+\textbf{Migrations:} Magento, WooCommerce and BigCommerce to Shopify --- catalog, customer and order data mapping, metafield modelling, redirect strategy, launch QA \\
+\textbf{Frameworks \& Backend:} React, Next.js, Vue.js, Node.js, Express, Tailwind CSS, REST, MongoDB, MySQL \\
+\textbf{Practice:} Technical audits, technical documentation, code review, Core Web Vitals, accessibility, Git \\
+
+%--- EXPERIENCE ---
+\section*{Experience}
+
+\textbf{Senior Shopify Engineer} \hfill Apr 2026 -- Present \\
+\textit{The Diamond Port, Surat, India}
+\begin{itemize}
+  \item Maintain and release \textbf{Diamond Engagement RingBuilder}, a public Shopify App Store app --- Remix, Node.js and React with App Bridge, Polaris, OAuth and session storage over Admin GraphQL and webhooks; live since Jul 2024 at \$1{,}499 one-time, rated 5.0 out of 5
+  \item Deliver checkout extensibility on non-Plus plans through the supported route --- Shopify Functions distributed via the public app (discount, cart \& checkout validation, delivery customization, payment customization, cart transform) plus app blocks on the Thank You and Order Status pages
+  \item Lead the Thank You / Order Status upgrade ahead of the 26 Aug 2026 non-Plus deadline: audited legacy checkout scripts and rebuilt the behaviour as app blocks and Functions
+  \item Own a five-store Shopify estate --- one storefront per market across Australia, the UK, Germany, the US and India --- each on its own custom Liquid theme sharing a common section library and analytics layer
+  \item Review pull requests, maintain theme and app technical documentation and handover runbooks, and mentor junior developers on Liquid and app patterns % [CONFIRM WITH AYUSH BEFORE PRINTING]
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Full Stack Shopify Developer} \hfill Apr 2025 -- Mar 2026 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Built a distinct custom Liquid theme per brand with the Shopify CLI --- sections, blocks, JSON templates and theme app extensions --- live at \href{https://ringsofaustralia.com.au}{ringsofaustralia.com.au} (AUD), \href{https://ringsofuk.com}{ringsofuk.com} (GBP), \href{https://ringsofgermany.com}{ringsofgermany.com} (EUR), \href{https://www.preciouscarbon.com}{preciouscarbon.com} (USD) and \href{https://premexa.in}{premexa.in} (INR)
+  \item Chose separate stores over a single multi-market store because each market carries its own legal entity, inventory and merchandising team; offset the duplicated theme deploys with a shared section library and one analytics layer across the estate
+  \item Executed platform migrations onto Shopify from Magento, WooCommerce and BigCommerce: catalog, customer and order data mapping, metafield modelling, URL and 301 redirect strategy, and post-launch QA
+  \item Ran technical audits on inherited themes and apps, then removed the dead code, duplicated scripts and render-blocking assets the audits surfaced
+  \item Integrated payments, logistics and analytics through the Admin API, Storefront API, GraphQL, webhooks and metafields
+  \item Built \href{https://thediamondport.com}{thediamondport.com}, a multi-supplier B2B/B2C marketplace in Next.js and Tailwind over 2,000+ SKUs from supplier API feeds, with white-label iframe embeds, operating across US, AU, UK, India, Belgium and Hong Kong
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{Frontend Engineer (React \& Vue)} \hfill Apr 2024 -- Mar 2025 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Built the ring configurator that shipped to two public marketplaces --- Shopify App Store (Jul 2024) and WordPress.org with WooCommerce integration --- and have owned every release since
+  \item Built the shared component library adopted as the company UI standard, cutting average feature build time by roughly 30\% across concurrently running projects
+  \item Shipped production React, Vue.js and ES6+ JavaScript interfaces in HTML5 and SCSS across brand sites, owning Core Web Vitals, responsive behaviour and WCAG accessibility
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{React.js Intern} \hfill Oct 2023 -- Mar 2024 \\
+\textit{The Diamond Port}
+\begin{itemize}
+  \item Shipped production React components and REST API integrations into live storefronts, working in a Git pull-request and code-review workflow
+\end{itemize}
+
+%--- PROOF ---
+\section*{Shipped Shopify Proof}
+\begin{itemize}
+  \item \textbf{12 live production builds across 9 brands and 5 currencies} --- the multi-client surface area of agency work, delivered in house, each with its own theme architecture, market rules and launch cycle
+  \item \textbf{Two public marketplace listings for one product} --- \href{https://apps.shopify.com/tdp-ring-builder}{apps.shopify.com/tdp-ring-builder} (Shopify App Store, published under The Diamond Port's Partner account; I took it through app review) and \href{https://wordpress.org/plugins/tdp-ring-builder/}{wordpress.org/plugins/tdp-ring-builder} (WooCommerce). Merges physical and virtual diamond inventory, real-time supplier feeds, custom markups, engraving, and automated ordering
+  \item \textbf{i3dStudio} (\href{https://i3dstudio.vercel.app}{i3dstudio.vercel.app}) --- Three.js platform converting CAD files into embeddable 3D product viewers with AR try-on, delivered to storefronts as a one-line domain-locked iframe plus REST API and typed SDK
+  \item \textbf{AI commerce automation} --- Node.js and LLM pipelines on the Admin API for inventory sync, order reporting and catalog enrichment, removing roughly 15 hours of manual operations per week
+\end{itemize}
+
+%--- EDUCATION ---
+\section*{Education}
+\textbf{MCA, Artificial Intelligence \& Machine Learning} --- Parul University \textbullet\ Grade A \hfill Jun 2024 -- May 2026 \\
+\textbf{BCA} --- Veer Narmad South Gujarat University \textbullet\ Grade A \hfill Jun 2021 -- Apr 2024
+
+\end{document}
